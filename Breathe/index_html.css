@@ -1,0 +1,25 @@
+a { color:#5D5D9E; } 
+a:visited { color:#5D5D9E; } 
+a:active { color:#5C615E; } 
+a:hover { color:#B2B3B4; } 
+html, body { min-height: 100% } 
+@keyframes rcKeyframes-bounce1
+{
+		0%   { transform: scale(0.8,0.8); }
+		100% { transform: scale(1.0,1.0); }
+}
+.rcAnim-bounce1
+{
+		animation-name:rcKeyframes-bounce1;
+		animation-delay:0ms;
+		animation-duration:1000ms;
+		animation-iteration-count:2;
+		animation-timing-function:ease;
+		animation-direction:alternate-reverse;
+		animation-fill-mode:forwards;
+}
+body { background-color:#FFFFFF; background: linear-gradient(to bottom, #D57700, #FFFFFF); background-repeat: no-repeat; padding:0;  margin: 0; }
+.textstyle1 { text-align:left; }
+#img_54a1c552 { position:absolute; left:32%; top:9%; width:31%; background:none; height:auto;  }
+#text_4146eb3e { position:absolute; left:32%; top:67%; width:745px; height:171px; background:none;  }
+.textstyle2 { font-size:12pt; font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; color:#000000;  }

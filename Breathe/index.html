@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="generator" content="RocketCake">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="index_html.css?h=b016b0ef">
+</head>
+<body>
+<div class="textstyle1">
+  <img src="rc_images/icon.png" width="1080" height="1080" id="img_54a1c552" alt="" title="" />
+  <div id="text_4146eb3e">
+    <div class="textstyle1">
+      <span class="textstyle2">Breathe was created as a breather from the fast paced movement of the web browser space. Many web browsers today have all these newfangled features that honestly get in the way of a simple experience. Here at breathe, we believe simplicity is key. Our browser has the essentials (or will soon be added) and nothing more. No AI integration, no pointless bloat, no nothing. Here at breathe, we also believe that software should be transparent about data collection, so we made breathe browser entirely open-source. We also offer a classic Chrome-style trapezoid tabbing system thanks to EasyTabs. So, take a moment to breathe, and surf the web with simplicity.</span>
+      </div>
+    </div>
+  </div>
+	<script type="text/javascript">
+	var mquery = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+	if( !mquery || !mquery.matches)
+	{
+	
+	function rcStartScrollIntoViewInteractionObserver(elementId, animationClass, keyframename, stylesToInitStartFrame)
+	{
+	   if (!('IntersectionObserver' in window)) return;
+		var element = document.getElementById(elementId); if (element == null) return;
+		const theobserver = new IntersectionObserver(function(entries) 
+		{
+			entries.forEach(function(entry)
+			{
+				if (entry.isIntersecting && !entry.target.classList.contains(entry.target.rcStartAnimationWhenScrolledInto))
+					entry.target.classList.add(entry.target.rcStartAnimationWhenScrolledInto);
+			});
+		});
+	
+		element.rcStartAnimationWhenScrolledInto = animationClass;
+		theobserver.observe(element);
+	
+		if (stylesToInitStartFrame)	element.style.cssText += stylesToInitStartFrame; // if set, set all styles to the given initial keyframes
+	}
+
+
+	rcStartScrollIntoViewInteractionObserver("img_54a1c552", "rcAnim-bounce1", "rcKeyframes-bounce1", "transform: scale(0.8,0.8);");
+
+
+	}
+	</script></body>
+</html>

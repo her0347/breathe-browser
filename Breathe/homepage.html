@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breathe Browser</title>
+
+    <style>
+        body {
+            background-color: #202124;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 30px;
+        }
+
+        img {
+            width: 150px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            width: 500px;
+            max-width: 80%;
+            padding: 15px;
+            border-radius: 25px;
+            border: none;
+            font-size: 18px;
+            outline: none;
+        }
+
+        button {
+            padding: 15px 25px;
+            margin-left: 10px;
+            border-radius: 25px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>breathe</h1>
+
+    <img src="icon.png" alt="Logo">
+
+    <br>
+
+    <p1>No bloat or tracking. Just you, and the web.</p1>
+
+    <br>
+    <br>
+
+    <input id="search"
+           class="search-box"
+           type="text"
+           placeholder="Search the web..."
+           onkeydown="if(event.key === 'Enter') search();">
+
+    <button onclick="search()">Search</button>
+
+
+    <script>
+        function search() {
+            let text = document.getElementById("search").value;
+
+            if (text.trim() !== "") {
+                window.location.href =
+                    "https://www.duckduckgo.com/search?q=" +
+                    encodeURIComponent(text);
+            }
+        }</script>
+
+</body>
+</html>

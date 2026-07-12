@@ -1,0 +1,16 @@
+h1, h2, h3 { margin:0; padding:0; font-weight:normal; font-style:normal; }
+a { color:#5D5D9E; } 
+a:visited { color:#5D5D9E; } 
+a:active { color:#5C615E; } 
+a:hover { color:#B2B3B4; } 
+body { background-color:#000000; padding:0;  margin: 0; }
+.textstyle1 { text-align:left; }
+#text_f645165 { position:absolute; left:27%; top:66%; width:471px; height:104px; background:none;  }
+.textstyle2 { font-size:24pt; font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; color:#FFFFFF; font-weight:bold;  }
+#text_4a8d779a { position:absolute; left:27%; top:85%; width:343px; height:41px; background:none;  }
+.textstyle3 { font-size:24pt; font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; color:#00FF00;  }
+#heading_4146eb3e { position:absolute; left:26%; top:113%; width:647px; height:66px; background:none; font-size:24pt; font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; color:#FFFFFF; text-align:left; font-weight:bold;  }
+#text_4bfff64d { position:absolute; left:26%; top:130%; background:none;  }
+.textstyle4 { font-size:22pt; font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; color:#00FF00;  }
+#text_10e32479 { position:absolute; left:17%; top:1%; background:none;  }
+.textstyle5 { font-size:20pt; font-family:'Comic Sans MS', 'Chalkboard SE', 'Comic Neue', sans-serif; color:#FFFFFF;  }

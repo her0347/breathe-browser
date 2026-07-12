@@ -1,0 +1,11 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Project Path="Breathe/Breathe.csproj" Id="36586bc4-f2d3-4f63-ad1b-a401f6a3341f">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+</Solution>
