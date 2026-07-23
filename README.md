@@ -30,3 +30,4 @@ ________________________________________________________________________________
 
 - Allow downloads
 - Firefox-style download UI
+- More options for right-click menu
