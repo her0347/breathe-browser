@@ -2,9 +2,6 @@
 using CefSharp.WinForms;
 using EasyTabs;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Breathe
@@ -46,7 +43,7 @@ namespace Breathe
             applicationContext.Start(container);
             Application.Run(applicationContext);
 
-            
+
 
             Cef.Shutdown();
         }

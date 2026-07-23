@@ -1,25 +1,22 @@
 ﻿using CefSharp;
-using CefSharp.WinForms;
-using com.sun.security.auth;
+using CefSharp.Handler;
 using EasyTabs;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.IO;
-using System.Linq;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Breathe
 {
+
+
     public partial class Form1 : Form
     {
 
@@ -38,6 +35,13 @@ namespace Breathe
         private static readonly HttpClient _favHttpClient = new HttpClient() { Timeout = TimeSpan.FromSeconds(2) };
         private static readonly ConcurrentDictionary<string, Task<Image>> _faviconTasks = new ConcurrentDictionary<string, Task<Image>>();
         private static readonly ConcurrentDictionary<string, Image> _faviconCache = new ConcurrentDictionary<string, Image>();
+        private DownloadHandler downloadHandler;
+
+
+
+
+
+
 
         private string GetFaviconKey(Uri uri)
         {
@@ -158,7 +162,7 @@ namespace Breathe
 
             return null;
         }
-        
+
 
         // Update the EasyTabs tab image (Bitmap/Image) for the tab that hosts this form
         private void SetTabImage(Image image)
@@ -226,7 +230,7 @@ namespace Breathe
             }
             catch { return false; }
         }
-        
+
 
         public Form1()
         {
@@ -236,6 +240,45 @@ namespace Breathe
             browser.AddressChanged += Browser_AddressChanged;
             browser.LoadingStateChanged += Browser_LoadingStateChanged;
 
+
+
+        }
+
+
+        public class MyDownloadHandler : IDownloadHandler
+        {
+            public bool CanDownload(
+                IWebBrowser chromiumWebBrowser,
+                IBrowser browser,
+                string url,
+                string requestMethod)
+            {
+                return true;
+            }
+
+            public bool OnBeforeDownload(
+                IWebBrowser chromiumWebBrowser,
+                IBrowser browser,
+                DownloadItem downloadItem,
+                IBeforeDownloadCallback callback)
+            {
+                if (callback != null && !callback.IsDisposed)
+                {
+                    callback.Continue(downloadItem.SuggestedFileName, true);
+                }
+
+                return true;
+            }
+
+            public void OnDownloadUpdated(
+                IWebBrowser chromiumWebBrowser,
+                IBrowser browser,
+                DownloadItem downloadItem,
+                IDownloadItemCallback callback)
+                
+            {
+
+            }
         }
 
         private void Browser_LoadingStateChanged(object sender, CefSharp.LoadingStateChangedEventArgs e)
@@ -328,6 +371,10 @@ namespace Breathe
             }
         }
 
+
+
+
+
         private void Browser_TitleChanged(object sender, CefSharp.TitleChangedEventArgs e)
         {
             BeginInvoke(new Action(() =>
@@ -343,8 +390,8 @@ namespace Breathe
 
         private async void Browser_AddressChanged(object sender, CefSharp.AddressChangedEventArgs e)
         {
-            
-            try 
+
+            try
             {
                 // Update address textbox on UI thread (clear when loading homepage)
                 Uri uri = new Uri(e.Address);
@@ -519,6 +566,12 @@ namespace Breathe
 
 
 
+
+
+
+
+
+
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -559,6 +612,12 @@ namespace Breathe
                     url = about;
                 }
 
+                if (input== "about:update")
+                {
+                    string about = FindFileInParents("update.html") ?? Path.Combine(Application.StartupPath, "update.html");
+                    url = about;
+                }
+
 
                 browser.Load(url);
             }
@@ -592,11 +651,28 @@ namespace Breathe
             }
         }
 
+
         private void btnDownloads_Click(object sender, EventArgs e)
+
         {
-            System.Diagnostics.Process.Start("explorer.exe", Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\Downloads");
+            Process p = Process.Start("explorer.exe", "shell:downloads");
+
+            if (p != null)
+            {
+                p.StartInfo.WindowStyle = ProcessWindowStyle.Minimized;
+            }
+
 
 
         }
+
+
+
+
     }
+
+
 }
+
+
+
