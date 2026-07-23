@@ -3,6 +3,7 @@ using CefSharp.WinForms;
 using EasyTabs;
 using System;
 using System.Windows.Forms;
+using static Breathe.Form1;
 
 namespace Breathe
 {
@@ -17,6 +18,9 @@ namespace Breathe
             var settings = new CefSettings();
 
             Cef.Initialize(settings);
+
+
+            
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

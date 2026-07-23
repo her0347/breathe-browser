@@ -240,7 +240,7 @@ namespace Breathe
             browser.AddressChanged += Browser_AddressChanged;
             browser.LoadingStateChanged += Browser_LoadingStateChanged;
 
-
+            browser.LifeSpanHandler = new TabLifeSpanHandler(this);
 
         }
 
