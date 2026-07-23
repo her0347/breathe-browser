@@ -24,3 +24,9 @@ ________________________________________________________________________________
 - Bookmarks
 - Extension support
 - Password manager
+
+
+# In development
+
+- Allow downloads
+- Firefox-style download UI
