@@ -16,20 +16,23 @@ breathe browser collects no personal data, however some may be collected by pack
 about:credits
 
 about:breathe
+
+about:update 
 ____________________________________________________________________________________________________________________________________________________________________________________________________________________
 
-# Upcoming features (in order of priority / most likely to least likely)
+# Upcoming features 
 
 - History
 - Bookmarks
 - Extension support
 - Password manager
+- proper support for about:blank links ✔️
 
 
 # In development
 
-- Allow downloads
-- Firefox-style download UI
+- Allow downloads ✔️
+- ~Firefox-style download UI~ Replaced with opening explorer.exe
 - More options for right-click menu
 
 __________________________________________________________________________________________________________________
