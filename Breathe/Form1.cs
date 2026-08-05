@@ -1,5 +1,6 @@
 ﻿using CefSharp;
 using CefSharp.Handler;
+using CefSharp.WinForms;
 using EasyTabs;
 using System;
 using System.Collections.Concurrent;
@@ -235,12 +236,16 @@ namespace Breathe
         public Form1()
         {
             InitializeComponent();
-            // Wire CefSharp browser events to update tab title and favicon
+
+            browser.MenuHandler = new CustomMenuHandler(browser);
+            browser.DownloadHandler = new MyDownloadHandler();
+
             browser.TitleChanged += Browser_TitleChanged;
             browser.AddressChanged += Browser_AddressChanged;
             browser.LoadingStateChanged += Browser_LoadingStateChanged;
-
             browser.LifeSpanHandler = new TabLifeSpanHandler(this);
+
+
 
         }
 

@@ -15,15 +15,18 @@ namespace Breathe
         [STAThread]
         static void Main()
         {
-            var settings = new CefSettings();
-
-            Cef.Initialize(settings);
+             
 
 
-            
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            var settings = new CefSettings();
+
+            Cef.Initialize(settings);
+            
 
             AppContainer container = new AppContainer();
 
